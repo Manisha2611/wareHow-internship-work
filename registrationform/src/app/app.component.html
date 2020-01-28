@@ -117,25 +117,25 @@
           <div class="row">
             <div class="col-lg-6">
               <label>FirstName:</label>
-              <input type="text" name="fname" placeholder="Enter your first name" class="form-control" [(ngModel)]="data.fname">
+              <input type="text" name="fname" placeholder="Enter your first name" class="form-control" [(ngModel)]="newdata.fname">
             </div>
             <div class="col-lg-6">
               <label>LastName:</label>  
-              <input type="text" name="lname" placeholder="Enter your last name" class="form-control"[(ngModel)]="data.lname" >
+              <input type="text" name="lname" placeholder="Enter your last name" class="form-control"[(ngModel)]="newdata.lname" >
             </div>
             
           </div>
           <br>
               <label>Email-id</label>
-              <input type="email" name="email" placeholder="Enter E-mail" class="form-control"[(ngModel)]="data.email" ><br>
+              <input type="email" name="email" placeholder="Enter E-mail" class="form-control"[(ngModel)]="newdata.email" ><br>
           <div class="row">
             <div class="col-lg-6">
               <label>Password:</label>
-              <input type="password" name="password" placeholder="Enter your Pasword " class="form-control" [(ngModel)]="data.password" >
+              <input type="password" name="password" placeholder="Enter your Pasword " class="form-control" [(ngModel)]="newdata.password" >
             </div>
             <div class="col-lg-6">
               <label>ReEnter Password:</label>  
-              <input type="password" name="repassword" placeholder="Re-Enter your Password" class="form-control" [(ngModel)]="data.repassword">
+              <input type="password" name="repassword" placeholder="Re-Enter your Password" class="form-control" [(ngModel)]="newdata.repassword">
             </div>
           </div>
           <br>
@@ -148,8 +148,8 @@
              <option>Others</option>
           </select><br>
             <label>Address</label>
-            <input type="text" name="address" placeholder="Enter your Full Address" class="form-control" [(ngModel)]="data.address" ><br>
-            <button (click)="updateData(newdata)" class="btn btn-primary btn-block" >submit</button >
+            <input type="text" name="address" placeholder="Enter your Full Address" class="form-control" [(ngModel)]="newdata.address" ><br>
+            <!-- <button (click)="updateData(data)" class="btn btn-primary btn-block" >submit</button > -->
             
       </form>
     </div>
