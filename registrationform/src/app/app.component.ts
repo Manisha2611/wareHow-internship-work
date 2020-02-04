@@ -9,8 +9,10 @@ export class AppComponent {
 
   title = 'registrationform';
   isDisplay=false;
-  toggleDisplay(i:any){
-    this.isDisplay= !this.isDisplay;
+
+  toggleDisplay(i:any)
+  {
+    this.isDisplay = !this.isDisplay;
     console.log(i);
     this.i = i; 
     this.newdata=this.users[i];
@@ -18,44 +20,31 @@ export class AppComponent {
 
 data:any;
 users:any;
-newusers:any;
 i:any;
 newdata:any;
 
-constructor(){
+constructor()
+{
   this.data = {fname:"",lname:""};
   this.users=[];
-  this.newusers=[];
 }
   add(data)
   {
     console.log(data);
-    var obj = {fname:data.fname, lname:data.lname, email:data.email, password:data.password, repassword:data.repassword, address:data.address};
+    var obj = {fname: data.fname, lname:data.lname, email:data.email, password:data.password, repassword:data.repassword,gender:data.gender, address:data.address};
     this.users.push(obj);
     console.log(this.users);
   }
 
-  // updateData(data)
-  // {
-  //   console.log(data);
-  //   var obj2 = {fname:data.fname, lname:data.lname, email:data.email, password:data.password, repassword:data.repassword, address:data.address};
-  //   this.newusers.push(obj2);
+  updateData(newdata)
+  {
+    // this.newdata = {fname: newdata.fname, lname : newdata.lname, email : newdata.email, password : newdata.password, repassword : newdata.repassword, address : newdata.address};
+    // this.users[this.i].push(this.newdata);
+    this.toggleDisplay(this.i);
+  } 
   
-  //   console.log(this.users);
-  //   console.log(this.newusers);
-  //   console.log(this.i);
-  //   console.log(this.users[this.i].fname);
-  //   console.log(this.newusers[0].fname);
-    
-  //   if(this.users[this.i].fname==this.newusers[0].fname)
-  //   {
-  //     this.users[this.i] = this.newusers[0];
-  //   }
-  //   console.log(this.users);
-  //   console.log(this.newusers);
-  // }
- 
-  deleteRowData(data){
+  deleteRowData(data)
+  {
     this.users = this.users.filter(ele =>{
       return ele !== data;
     });
