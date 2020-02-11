@@ -32,14 +32,14 @@
               </div>
             </div>
             <br>
-                <label> Gender</label>
-             <select class="form-control" >
+                <!-- <label> Gender</label>
+             <select class="form-control"  >
                
-               <option>Choose Gender</option>
+               
                <option  name="gender" [(ngModel)]="newdata.gender">Male</option>
                <option  name="gender" [(ngModel)]="newdata.gender">Female</option>
                <option  name="gender" [(ngModel)]="newdata.gender">Others</option>
-            </select><br>
+            </select><br> -->
               <label>Address</label>
               <input type="text" name="address" placeholder="Enter your Full Address" class="form-control" [(ngModel)]="newdata.address" ><br>
               <button (click)="updateData(newdata)" class="btn btn-primary btn-block"  >submit</button > 
@@ -50,5 +50,8 @@
       <div class="col-lg-3"></div>
     </div>
   </div>
+
+  {{newdata.fname}}
+
   
   

@@ -32,12 +32,12 @@
                 </div>
               </div>
               <br>
-                  <label> Gender</label>
-               <select class="form-control" name="gender" [(ngModel)]="data.gender">
-                 <option>Male</option>
-                 <option>Female</option>
-                 <option>Others</option>
-              </select><br>
+                  <!-- <label> Gender</label>
+               <select class="form-control"  >
+                 <option name="gender" [(ngModel)]="data.gender">Male</option>
+                 <option name="gender" [(ngModel)]="data.gender">Female</option>
+                 <option name="gender" [(ngModel)]="data.gender">Others</option>
+              </select><br> -->
                 <label>Address</label>
                 <input type="text" name="address" placeholder="Enter your Full Address" class="form-control" [(ngModel)]="data.address" ><br>
                 <button (click)="add(data)" class="btn btn-primary btn-block" >submit</button >
@@ -59,12 +59,12 @@
           <th>EMAIL</th>
           <th>PASSWORD</th>
           <th>REPASSWORD</th>
-          <th>GENDER</th>
+          <!-- <th>GENDER</th> -->
           <th>ADDRESS</th>
           
         </tr>
         
-        <tr *ngFor="let data of users; let i=index">
+        <tr *ngFor="let data of apiarray; let i=index">
         
           <td>{{i}}</td>
           <td>{{data.fname}}</td>
@@ -72,13 +72,13 @@
           <td>{{data.email}}</td>
           <td>{{data.password}}</td>
           <td>{{data.repassword}}</td>
-          <td>{{data.gender}}</td>
+          <!-- <td>{{data.gender}}</td> -->
           <td>{{data.address}}</td>
           
           
           
-          <td><button type="button" class="btn btn-primary" [routerLink]="['/editform']" (click)="edit(i)">EDIT</button></td>
-          <td><button type="button" class="btn btn-primary"(click)="deleteRowData(data)">DELETE</button></td>
+          <td><button type="button" class="btn btn-primary" [routerLink]="['/editform']" (click)="edit(data._id, i)">EDIT</button></td>
+          <td><button type="button" class="btn btn-primary"(click)="deleteRowData(data._id)">DELETE</button></td>
           
         </tr>
     </table>

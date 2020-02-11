@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { ApiServiceService } from '../api-service.service';
+
 
 @Component({
   selector: 'app-editform',
@@ -10,24 +13,28 @@ export class EditformComponent implements OnInit {
 
   newdata:any;
   users:any;
-  i:any;
+  id:any;
 
-  constructor(private router:Router) 
+  constructor(private router:Router,private http:HttpClient,private apiService:ApiServiceService) 
   {
-    
+    this.newdata = {}
   }
   ngOnInit() 
   {
     this.newdata=JSON.parse(localStorage.getItem('newdata_key'));
-    this.users=JSON.parse(localStorage.getItem('users_key'));
-    this.i=localStorage.getItem('i_key');
-   
+    this.id=localStorage.getItem('id_key'); 
   }
   updateData(newdata)
   {
-    this.users[this.i] = this.newdata;
-    localStorage.setItem('passback_users_key',JSON.stringify(this.users));
+    // localStorage.setItem('passback_users_key',JSON.stringify(this.users));
+      
+    this.apiService.editform(this.id,newdata).subscribe(res => {
+      alert("New user added");
+      this.ngOnInit();
+    })
+    
     this.router.navigate(['/firstform']);
+    
   }
 
 }
